@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Data Pegawai</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Data Pegawai</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Gaji</th>
+            </tr>
+        </thead>
+        <tbody id="tabel-pegawai">
+            <!-- Data pegawai akan dimasukkan di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        // Data pegawai
+        const pegawai = [
+            { id: 1, nama: 'Azis', umur: '30', jabatan: 'Manager', gaji: 'Rp 10.000.000' },
+            { id: 2, nama: 'Bambang', umur: '28', jabatan: 'Staff', gaji: 'Rp 5.000.000' },
+            { id: 3, nama: 'Citra', umur: '23', jabatan: 'HRD', gaji: 'Rp 8.000.000' },
+            { id: 4, nama: 'Dewi', umur: '25', jabatan: 'Akuntan', gaji: 'Rp 7.500.000' },
+            { id: 5, nama: 'Eko', umur: '27', jabatan: 'Marketing', gaji: 'Rp 7.000.000' }
+        ];
+
+        // Menambahkan data ke dalam tabel
+        const tabelPegawai = document.getElementById('tabel-pegawai');
+        pegawai.forEach(pegawai => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${pegawai.id}</td>
+                <td>${pegawai.nama}</td>
+                <td>${pegawai.umur}</td>
+                <td>${pegawai.jabatan}</td>
+                <td>${pegawai.gaji}</td>
+            `;
+            tabelPegawai.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>
